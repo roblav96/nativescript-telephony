@@ -1,7 +1,7 @@
 // 
 
 import {Observable} from 'data/observable';
-import {YourPlugin} from 'nativescript-yourplugin';
+import {Telephony} from 'nativescript-telephony';
 
 export class HelloWorldModel extends Observable {
 
@@ -10,12 +10,12 @@ export class HelloWorldModel extends Observable {
 	constructor() {
 		super();
 
-		this.message = "blahhh"
+		this.message = "HAIII :D"
 
 	}
 
 	public onTap() {
-		YourPlugin().then(function(resolved) {
+		Telephony().then(function(resolved) {
 			console.log('');
 			console.log('================');
 			console.warn('resolved >', resolved)
