@@ -50,8 +50,9 @@ Sadly there's nothing more we can get here.
 When using an emulator or a sim card does not exist.
 
 ## Android Quirks
+All permission dialogues are built into the `Telephony` function.
 ### Promise.Resolves
-##### When Permission `GRANTED` to `READ_PHONE_STATE`
+##### When Permission is `GRANTED` to `READ_PHONE_STATE`
 ```json
 {
 	"countryCode": String,
@@ -67,7 +68,7 @@ When using an emulator or a sim card does not exist.
 	"mnc": String,
 }
 ```
-##### When Permission `DENIED` to `READ_PHONE_STATE`
+##### When Permission is `DENIED` to `READ_PHONE_STATE`
 ```json
 {
 	// START Granted Permissions
