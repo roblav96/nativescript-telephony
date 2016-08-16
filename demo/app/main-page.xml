@@ -1,0 +1,7 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <StackLayout>
+        <Label text="{{ message }}" class="message" textWrap="true" />
+        <Button text="Test SimCard()" tap="{{ onTap }}" />
+    </StackLayout>
+</Page>
+
