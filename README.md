@@ -36,7 +36,7 @@ If you are unfamiliar with Promises, read up on these:
 
 ## iOS Quirks
 ### Promise.Resolves
-```json
+```
 {
   "carrierName": String,
   "countryCode": String,
@@ -53,7 +53,7 @@ When using an emulator or a sim card does not exist.
 All permission dialogues are built into the `Telephony` function.
 ### Promise.Resolves
 ##### When Permission is `DENIED` to `READ_PHONE_STATE`
-```json
+```
 {
 	"countryCode": String,
 	"simOperator": String,
@@ -69,15 +69,15 @@ All permission dialogues are built into the `Telephony` function.
 }
 ```
 ##### When Permission is `GRANTED` to `READ_PHONE_STATE`
-```json
+```
 {
-	// START Granted Permissions
+	// START GRANTED PERMISSIONS
 	"phoneNumber": String,
 	"deviceId": String,
 	"deviceSoftwareVersion": String,
 	"simSerialNumber": String,
 	"subscriberId": String,
-	// END Granted Permissions
+	// END GRANTED PERMISSIONS
 	"countryCode": String,
 	"simOperator": String,
 	"carrierName": String,
