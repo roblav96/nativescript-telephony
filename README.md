@@ -11,7 +11,7 @@ Basically this is his plugin. I followed his source code as a guide.
 - iOS
 
 ## Installation
-```
+```bash
 tns plugin add nativescript-telephony
 ```
 
@@ -52,7 +52,7 @@ When using an emulator or a sim card does not exist.
 ## Android Quirks
 All permission dialogues are built into the `Telephony` function.
 ### Promise.Resolves
-##### When Permission is `GRANTED` to `READ_PHONE_STATE`
+##### When Permission is `DENIED` to `READ_PHONE_STATE`
 ```json
 {
 	"countryCode": String,
@@ -68,7 +68,7 @@ All permission dialogues are built into the `Telephony` function.
 	"mnc": String,
 }
 ```
-##### When Permission is `DENIED` to `READ_PHONE_STATE`
+##### When Permission is `GRANTED` to `READ_PHONE_STATE`
 ```json
 {
 	// START Granted Permissions
@@ -95,12 +95,11 @@ All permission dialogues are built into the `Telephony` function.
 Never.
 
 ## Demo
-##### iOS
-```
+```bash
+npm run setup
+# iOS
 npm run demo.ios
-```
-##### Android
-```
+# Android
 npm run demo.android
 ```
 

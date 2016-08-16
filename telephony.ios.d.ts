@@ -1,3 +1,1 @@
-export declare class Telephony {
-    constructor();
-}
+export declare function Telephony(): Promise<any>;
