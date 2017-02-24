@@ -1,15 +1,15 @@
-// 
+//
 
 /**
  *
- * 
-  .oooooo.   ooooooooo.   oooooooooooo oooooooooo.   ooooo ooooooooooooo  .oooooo..o 
- d8P'  `Y8b  `888   `Y88. `888'     `8 `888'   `Y8b  `888' 8'   888   `8 d8P'    `Y8 
-888           888   .d88'  888          888      888  888       888      Y88bo.      
-888           888ooo88P'   888oooo8     888      888  888       888       `"Y8888o.  
-888           888`88b.     888    "     888      888  888       888           `"Y88b 
-`88b    ooo   888  `88b.   888       o  888     d88'  888       888      oo     .d8P 
- `Y8bood8P'  o888o  o888o o888ooooood8 o888bood8P'   o888o     o888o     8""88888P'  
+ *
+  .oooooo.	 ooooooooo.   oooooooooooo oooooooooo.	 ooooo ooooooooooooo  .oooooo..o
+ d8P'  `Y8b  `888	`Y88. `888'		`8 `888'   `Y8b  `888' 8'	888   `8 d8P'	 `Y8
+888			  888	.d88'  888			888		 888  888		888		 Y88bo.
+888			  888ooo88P'   888oooo8		888		 888  888		888		  `"Y8888o.
+888			  888`88b.	   888	  "		888		 888  888		888			  `"Y88b
+`88b	ooo   888  `88b.   888		 o	888		d88'  888		888		 oo		.d8P
+ `Y8bood8P'  o888o	o888o o888ooooood8 o888bood8P'	 o888o	   o888o	 8""88888P'
  *
  *
  * http://www.network-science.de/ascii/
@@ -34,7 +34,7 @@ declare let android: any
 
 function hasPermission(): boolean {
 	// if (android.os.Build.VERSION.SDK_INT < 23) {
-	// 	return true
+	//	   return true
 	// }
 
 	if (!android.support || !android.support.v4 || !android.support.v4.content || !android.support.v4.content.ContextCompat || !android.support.v4.content.ContextCompat.checkSelfPermission) {
@@ -60,14 +60,14 @@ export function Telephony(): Promise<any> {
 
 			let reqid: number = Math.floor(Math.random() * 999)
 
-			function onPermissionsEvent(args) {
+			application.android.addEventListener(application.AndroidApplication.activityRequestPermissionsEvent, function onPermissionsEvent(args) {
 
-				if (args.requestCode == reqid && args.permissions[0] == android.Manifest.permission.READ_PHONE_STATE) {
+				if ((<any>args).requestCode == reqid && (<any>args).permissions[0] == android.Manifest.permission.READ_PHONE_STATE) {
 
 					// removeEventListener to reduce memory usage since it doesnt need to listen anymore
 					application.android.removeEventListener(application.AndroidApplication.activityRequestPermissionsEvent, onPermissionsEvent)
 
-					if (args.grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+					if ((<any>args).grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
 						resolve(true)
 					} else {
 						resolve(false)
@@ -75,9 +75,8 @@ export function Telephony(): Promise<any> {
 					}
 				}
 
-			}
+			});
 
-			application.android.addEventListener(application.AndroidApplication.activityRequestPermissionsEvent, onPermissionsEvent)
 			android.support.v4.app.ActivityCompat.requestPermissions(application.android.foregroundActivity, [android.Manifest.permission.READ_PHONE_STATE], reqid)
 
 		}

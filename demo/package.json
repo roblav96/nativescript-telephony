@@ -7,11 +7,14 @@
     "id": "org.nativescript.demo",
     "tns-ios": {
       "version": "2.2.1"
+    },
+    "tns-android": {
+      "version": "2.5.0"
     }
   },
   "dependencies": {
     "nativescript-telephony": "file:..",
-    "tns-core-modules": "2.2.0"
+    "tns-core-modules": "2.5.0"
   },
   "devDependencies": {
     "babel-traverse": "6.7.6",
@@ -21,6 +24,6 @@
     "lazy": "1.0.11",
     "tns-platform-declarations": "^2.2.0",
     "nativescript-dev-typescript": "^0.3.2",
-    "typescript": "^1.8.10"
+    "typescript": "~2.1.0"
   }
 }

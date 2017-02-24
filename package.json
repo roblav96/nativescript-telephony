@@ -2,7 +2,7 @@
 	"name": "nativescript-telephony",
 	"version": "1.0.2",
 	"description": "A Nativescript plugin to get the device's SIM data (carrier name, mcc mnc, country code, telephonenumber, etc)",
-	"main": "telephony.js",
+	"main": "telephony",
 	"typings": "index.d.ts",
 	"nativescript": {
 		"platforms": {
@@ -52,7 +52,7 @@
 	},
 	"devDependencies": {
 		"tns-platform-declarations": "^2.0.0",
-		"typescript": "^1.8.10"
+		"typescript": "~2.1.0"
 	}
 }
 
